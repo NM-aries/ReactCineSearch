@@ -13,10 +13,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 
+<style>
+    .navbar {
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+</style>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg p-5 bg-transparent navbar-dark fixed-top" id=" navbar">
+        <nav class="navbar navbar-expand-lg px-5 py-5 bg-transparent navbar-dark fixed-top" id=" navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">CeniSearch</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -29,40 +34,42 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#trending">Trending</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <section>
+    <section class="content" id="trending">
         <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner" id="CarouselPopular">
-
-            </div>
-            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-
-            </button> -->
+            <div class="carousel-inner" id="CarouselPopular"></div>
         </div>
     </section>
-    <!-- <section class="container-fluid py-3">
-        <ul class="nav nav- nav-fill" id="genre-list">
-        </ul>
-    </section> -->
+
     <section class="bg-dark ">
-        <div class="container-fluid p-5">
-            <h2 class="text-uppercase text-white ">Trending Movies</h2>
+        <div class="container-fluid p-5 section-title">
+            <h2 class="text-uppercase tc-primary ">
+                <img src="assets/images/icons/trending.png" alt="" height="30px">
+                Trending Movies
+            </h2>
         </div>
+
         <div id="trending-results" class="owl-carousel owl-theme"> </div>
     </section>
 
     <section class="">
-        <div class="container-fluid p-5">
-            <h2 class="text-uppercase">Trending Movies</h2>
+        <div class="container-fluid p-5 section-title">
+            <h2 class="text-uppercase tc-primary ">
+                <img src="assets/images/icons/video-search.png" alt="" height="30px">
+                Discover Genre
+            </h2>
+
+            <div class="row justify-content-md-center text-center mt-5" id="genre-list">
+
+            </div>
         </div>
-        <div id="trending-results" class="owl-carousel owl-theme"> </div>
     </section>
 
     <div class="container ">
@@ -75,6 +82,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="assets/js/api.js"></script>
 
+    <script>
+        document.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled', 'py-3');  // Add both classes
+                navbar.classList.remove('py-5');           // Remove p-5 class
+            } else {
+                navbar.classList.remove('scrolled');     // Remove scrolled class
+                navbar.classList.add('py-5');              // Add p-5 class
+            }
+        });
+
+    </script>
 </body>
 
 </html>

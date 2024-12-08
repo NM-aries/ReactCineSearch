@@ -1,33 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-*{
-    font-family: montserrat;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  font-family: montserrat;
 }
-.movie-card {
-    margin-bottom: 20px;
-  }
-  
-  .movie-poster {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .movie-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  .movie-overview {
-    font-size: 0.9rem;
-    color: #6c757d;
-  }
 
-  .carousel-item{
-    height: 700px;
-    background:rgb(0, 0, 0)
-  }
-  #movieTittle{
-    font-size: 3em;
-  }
-  
+:root {
+  --primary: #fd7d00;
+  --secondary: #c75c14;
+  --dark: #1f222b;
+  --semi-dark: #373643;
+  --white: #ffffff;
+}
+
+body {
+  background-color: var(--semi-dark);
+  position: relative;
+}
+.button-primary {
+  background-color: var(--primary);
+}
+.bgc-dark {
+  background-color: var(--dark);
+}
+
+.carousel-item {
+  height: 700px;
+  background: rgb(0, 0, 0);
+}
+#movieTittle {
+  font-size: 3em;
+}
+
+/* text */
+.tc-primary {
+  color: var(--primary);
+}
+/* navbar */
+
+.navbar.scrolled {
+  background-color: var(--dark) !important;
+  /* Change to your desired color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-title h2 {
+  display: inline-block;
+  letter-spacing: 1px;
+  color: var(--white);
+  font-weight: 300; /* You had font-weight twice, keeping the lighter one */
+  line-height: 40px;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.section-title h2:before {
+  background-color: var(--secondary);
+  content: "";
+  display: block;
+  height: 3px;
+  width: 20%;
+  margin-bottom: 10px;
+}
+
+.section-title h2:after {
+  background-color: var(--secondary);
+  content: "";
+  display: block;
+  right: 0;
+  position: absolute;
+  height: 3px;
+  width: 20%;
+  margin-top: 10px;
+}
+
+
+.trending-poster{
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}

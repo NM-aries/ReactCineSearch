@@ -64,7 +64,7 @@ function displayMovies(movies) {
                 <div class="col-6 col-md-4 text-white h-100 ps-5">
 					<h1 class="fw-bold" id="movieTittle">${title}</h1>
 					<p>${overview}</p>
-					<button class="btn btn-outline-primary rounded-0 p-3 px-4 btn-trailer text-white" data-id="${id}" onclick="displayTrailer('${id}')"><i class="fa-solid fa-video me-2"></i> Watch Trailer</button>
+					<button class="btn button-primary rounded-0 p-3 px-4 btn-trailer text-white" data-id="${id}" onclick="displayTrailer('${id}')"><i class="fa-solid fa-video me-2"></i> Watch Trailer</button>
                 </div>
                 <div class="col-8" style="height: 800px;
                         -webkit-mask-image: linear-gradient(to left, rgba(1,1,1,1) 0%, rgba(255,255,255,0.5) 20%, rgba(0,0,0,0) 100%); 
@@ -167,7 +167,7 @@ function displayTrendingMovies(movies) {
       : 'https://via.placeholder.com/500x750?text=No+Image'; // Fallback for missing images
 
     const movieCard = `
-      <div class="item mx-3">
+      <div class="item mx-3 trending-poster" >
         <div class="card border-0">
           <img src="${posterUrl}" class="card-img-top rounded-0 movie-poster" alt="${title}">
         </div>
@@ -185,8 +185,9 @@ function displayTrendingMovies(movies) {
 	animateOut: 'fadeOut',
     autoplayTimeout:5000,// Show navigation buttons
     responsive: {
-      0: { items: 1 }, // 1 item on mobile
-      600: { items: 2 }, // 2 items on tablets
+      0: { items: 1.8 }, // 1 item on mobile
+      500: { items: 3.5 }, // 2 items on tablets
+      900: { items: 4.5 }, // 2 items on tablets
       1000: { items: 5.5} // 4 items on desktop
     }
   });
@@ -214,9 +215,9 @@ function displayGenres(genres) {
   
     genres.forEach((genre) => {
       const genreItem = `
-        <li class="nav-item">
-          <a class="nav-link" href="#">${genre.name}</a>
-        </li>
+		<div class="col-3 mb-3">
+				<button class="btn btn-outline-warning w-100 py-4 rounded-0 fw-semibold" href="#">${genre.name}</button>
+		</div>
       `;
       genreList.innerHTML += genreItem;
     });
